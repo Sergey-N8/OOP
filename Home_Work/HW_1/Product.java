@@ -1,4 +1,4 @@
-package lesson1;
+package OOP.Home_Work.HW_1;
 
 public class Product {
 

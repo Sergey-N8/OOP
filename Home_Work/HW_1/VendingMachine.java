@@ -1,5 +1,4 @@
-package lesson1;
-
+package OOP.Home_Work.HW_1;
 import java.util.List;
 
 public class VendingMachine {
@@ -10,7 +9,7 @@ public class VendingMachine {
     public VendingMachine(List<Product> products) {
         this.products = products;
     }
-
+/* 
     public BottleOfWater getBottleOfWater(double volume){
         for (Product product : products){
             if (product instanceof BottleOfWater){
@@ -21,5 +20,18 @@ public class VendingMachine {
         }
         return null;
     }
+        */
+    public PacketOfChips getPacketOfChips(double weight){
+        for (Product product : products){
+            if (product instanceof PacketOfChips){
+                if (((PacketOfChips)product).getWeight() == weight){
+                    return (PacketOfChips)product;
+                }
+            }
+        }
+        return null;
+
+    }
+
 
 }

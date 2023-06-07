@@ -1,6 +1,6 @@
-package lesson1.sample;
+package OOP.Home_Work.HW_1.sample;
 
-import ru.geekbrains.lesson1.Product;
+import OOP.Home_Work.HW_1.Product;
 
 public class Program {
 
