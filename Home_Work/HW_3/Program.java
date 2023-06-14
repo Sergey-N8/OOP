@@ -13,26 +13,31 @@ public class Program {
      *  метод должен генерировать рабочих (Employee) разных типов.
      * @return
      */
-    static Worker generateWorker(){
-        String[] names = new String[] {"Владлен", "Клим", "Панкратий", "Рубен", "Герман"};
-        String[] surnames = new String[] {"Бирюков", "Копылов", "Горбунов", "Лыткин", "Соколов" };
-        int salary = random.nextInt(20000, 80000);
-        int age = random.nextInt(18, 60);
+    static Employee generateEmployee(){
 
-        return new Worker(names[random.nextInt(names.length)], 
-        surnames[random.nextInt(surnames.length)], salary, age);
-    }
+        if (!chose){
+            String[] names = new String[] {"Владлен", "Клим", "Панкратий", "Рубен", "Герман"};
+            String[] surnames = new String[] {"Бирюков", "Копылов", "Горбунов", "Лыткин", "Соколов" };
+            int salary = random.nextInt(20000, 80000);
+            int age = random.nextInt(18, 60);
 
-    static Freelancer generateFreelancer(){
-        String[] names = new String[] { "Анатолий", "Глеб", "Клим", "Мартин", "Лазарь"};
-        String[] surnames = new String[] { "Григорьев", "Фокин", "Шестаков", "Хохлов", "Шубин"};
-        int salaryPerHour = random.nextInt(800, 1500);
-        int hoursWork = random.nextInt(30, 120);
-        int salary = salaryPerHour * hoursWork;
-        int age = random.nextInt(18, 60);
+            chose = true;
 
-        return new Freelancer(names[random.nextInt(names.length)], 
-        surnames[random.nextInt(surnames.length)], salary, age);
+            return new Worker(names[random.nextInt(names.length)], 
+            surnames[random.nextInt(surnames.length)], salary, age);
+        } else{
+            String[] names = new String[] { "Анатолий", "Глеб", "Клим", "Мартин", "Лазарь"};
+            String[] surnames = new String[] { "Григорьев", "Фокин", "Шестаков", "Хохлов", "Шубин"};
+            int salaryPerHour = random.nextInt(800, 1500);
+            int hoursWork = random.nextInt(30, 120);
+            int salary = salaryPerHour * hoursWork;
+            int age = random.nextInt(18, 60);
+
+            chose = false;
+
+            return new Freelancer(names[random.nextInt(names.length)], 
+            surnames[random.nextInt(surnames.length)], salary, age);
+        }
     }
 
     /**
@@ -46,14 +51,7 @@ public class Program {
         Employee[] employees = new Employee[10];
         for (int i = 0; i < employees.length; i++)
         {
-            if (!chose){
-                employees[i] = generateWorker();
-                chose = true;
-            } else{
-                employees[i] = generateFreelancer();
-                chose = false;
-            }
-
+            employees[i] = generateEmployee();
         }
 
         Arrays.sort(employees);
