@@ -8,11 +8,6 @@ public class Program {
     static Random random = new Random();
     static boolean chose = false;
 
-    /**
-     * TODO: Переработать метод generateEmployee в рамках домашнего задания,
-     *  метод должен генерировать рабочих (Employee) разных типов.
-     * @return
-     */
     static Employee generateEmployee(){
 
         if (!chose){
