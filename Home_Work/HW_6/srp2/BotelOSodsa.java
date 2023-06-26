@@ -13,8 +13,8 @@ public class BotelOSodsa extends Product {
         return taste;
     }
 
-    public BotelOSodsa(String nameProduct, int qnt, double price, double weight, String taste) {
-        super(nameProduct, qnt, price);
+    public BotelOSodsa(String nameProduct, double price, double weight, String taste) {
+        super(nameProduct, price);
         this.weight = weight;
         this.taste = taste;
     }

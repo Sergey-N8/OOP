@@ -4,6 +4,9 @@ public class Order {
 
     private Client Client;
     private Product Product;
+    private int qnt;
+    
+
 
     public void setClient(Client Client){
         this.Client = Client;
@@ -20,9 +23,14 @@ public class Order {
     public Client getClientFromOrder() {
         return Client;
     }
+    
+    public int getQnt() {
+        return qnt;
+    }
 
-    public Order(Client Client, Product Product){
+    public Order(Client Client, Product Product, int qnt){
         this.Client = Client;
         this.Product = Product;
+        this.qnt = qnt;
     }
 }
