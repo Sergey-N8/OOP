@@ -14,7 +14,7 @@ public class Master implements Observer {
 
     public Master(String name) {
         this.name = name;
-        minSalary = random.nextDouble(60000, 80000);
+        minSalary = random.nextDouble(60000, 90000);
         typeVacancy = "master";
     }
 
@@ -23,7 +23,7 @@ public class Master implements Observer {
         if (minSalary <= salary && this.typeVacancy.equals(typeVacancy)){
             System.out.printf("Рабочий %s (%f) >>> Мне нужна эта работа! [%s - %f]\n",
                     name, minSalary, companyName, salary);
-            minSalary = salary;
+            //minSalary = salary;
         }
         else {
             System.out.printf("Рабочий %s >>> Я найду работу получше (%f)! [%s - %f]\n",

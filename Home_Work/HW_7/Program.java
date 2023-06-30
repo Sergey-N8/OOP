@@ -12,8 +12,8 @@ public class Program {
     public static void main(String[] args) {
 
         JobAgency jobAgency = new JobAgency();
-        Company geekBrains = new Company("GeekBrains", 70000, jobAgency, "master");
-        Company google = new Company("Google", 100000, jobAgency, "student");
+        Company geekBrains = new Company("GeekBrains", 100000, jobAgency, "master");
+        Company google = new Company("Google", 70000, jobAgency, "student");
         Company yandex = new Company("Yandex", 120000, jobAgency, "prodactManager");
 
         Master ivanov = new Master("Ivanov");

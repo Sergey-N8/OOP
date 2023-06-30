@@ -20,7 +20,7 @@ public class Company {
     }
 
     public void needEmployee(){
-        double salary = random.nextDouble(3000, maxSalary);
+        double salary = random.nextDouble(50000, maxSalary);
         jobAgency.sendOffer(companyName, salary, typeVacancy);
     }
 

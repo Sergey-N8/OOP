@@ -13,19 +13,19 @@ public class ProdactManager implements Observer {
 
     public ProdactManager(String name) {
         this.name = name;
-        minSalary = random.nextDouble(2500, 5000);
+        minSalary = random.nextDouble(25000, 50000);
         typeVacancy = "prodactManager";
     }
 
     @Override
     public void receiveOffer(String companyName, double salary, String typeVacancy) {
         if (minSalary <= salary && this.typeVacancy.equals(typeVacancy)){
-            System.out.printf("Студент %s (%f) >>> Мне нужна эта работа! [%s - %f]\n",
+            System.out.printf("Продакт менеджер %s (%f) >>> Мне нужна эта работа! [%s - %f]\n",
                     name, minSalary, companyName, salary);
-            minSalary = salary;
+            //minSalary = salary;
         }
         else {
-            System.out.printf("Студент %s >>> Я найду работу получше (%f)! [%s - %f]\n",
+            System.out.printf("Продакт менеджер %s >>> Я найду работу получше (%f)! [%s - %f]\n",
                     name, minSalary, companyName, salary);
         }
     }
