@@ -8,16 +8,19 @@ public class Master implements Observer {
 
     private String name;
 
+    private String typeVacancy;
+
     private double minSalary;
 
     public Master(String name) {
         this.name = name;
         minSalary = random.nextDouble(60000, 80000);
+        typeVacancy = "master";
     }
 
     @Override
     public void receiveOffer(String companyName, double salary, String typeVacancy) {
-        if (minSalary <= salary){
+        if (minSalary <= salary && this.typeVacancy.equals(typeVacancy)){
             System.out.printf("Рабочий %s (%f) >>> Мне нужна эта работа! [%s - %f]\n",
                     name, minSalary, companyName, salary);
             minSalary = salary;
